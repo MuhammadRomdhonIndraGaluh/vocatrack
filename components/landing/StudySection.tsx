@@ -268,7 +268,7 @@ export default function StudySection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar bg-white rounded-3xl shadow-2xl flex flex-col"
+              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl flex flex-col"
             >
               {/* Close Button */}
               <button
@@ -280,8 +280,8 @@ export default function StudySection() {
               </button>
 
               {/* Header */}
-              <div className="pt-8 pb-4 px-6 text-center">
-                <h3 className="text-xl md:text-2xl font-extrabold text-blue-500 mb-1">
+              <div className="pt-5 pb-2 px-6 text-center">
+                <h3 className="text-lg md:text-2xl font-extrabold text-blue-500 mb-1">
                   SATU LANGKAH LAGI!
                 </h3>
                 <p className="text-sm md:text-base text-neutral-600 font-medium">
@@ -290,16 +290,16 @@ export default function StudySection() {
               </div>
 
               {/* Options Grid / Step Content */}
-              <div className="px-6 pb-8 pt-2">
+              <div className="px-6 pb-6 pt-2">
                 {popupStep === 1 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                     {/* Option 1: Sudah Punya Target */}
                     <div 
-                      className="group relative flex flex-col items-center bg-white border border-blue-200 hover:border-blue-500 rounded-2xl p-4 md:p-5 cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
+                      className="group relative flex flex-col items-center bg-white border border-blue-200 hover:border-blue-500 rounded-2xl p-3 md:p-4 cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
                       onClick={() => setPopupStep(2)}
                     >
-                      <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden bg-blue-50/50">
-                        <div className="absolute inset-0 translate-y-6 scale-[1.25]">
+                      <div className="w-full h-28 sm:h-36 relative rounded-xl overflow-hidden bg-blue-50/50">
+                        <div className="absolute inset-0 translate-y-4 scale-[1.15]">
                           <Image
                             src="/images/popup-1.png"
                             alt="Sudah Punya Target"
@@ -310,17 +310,17 @@ export default function StudySection() {
                         {/* White Fade Effect */}
                         <div className="absolute bottom-0 left-0 right-0 h-[15%] bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
                       </div>
-                      <div className="w-full bg-blue-500 text-white text-center py-2 md:py-2.5 rounded-lg font-bold text-sm md:text-base mb-3 group-hover:bg-blue-500 transition-colors">
+                      <div className="w-full bg-blue-500 text-white text-center py-2 md:py-2.5 rounded-lg font-bold text-sm md:text-base mb-2 group-hover:bg-blue-500 transition-colors">
                         Sudah Punya Target!
                       </div>
-                      <p className="text-[11px] md:text-xs text-neutral-600 text-center leading-relaxed px-1">
+                      <p className="text-[10px] md:text-xs text-neutral-600 text-center leading-relaxed px-1">
                         Saya sudah tahu ingin bekerja sebagai apa, bantu saya buatkan jalurnya.
                       </p>
                     </div>
 
                     {/* Option 2: Eksplorasi & Temukan */}
                     <div 
-                      className="group relative flex flex-col items-center bg-white border border-blue-200 hover:border-blue-500 rounded-2xl p-4 md:p-5 cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
+                      className="group relative flex flex-col items-center bg-white border border-blue-200 hover:border-blue-500 rounded-2xl p-3 md:p-4 cursor-pointer transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
                       onClick={async () => {
                         if (user) {
                           try {
@@ -332,8 +332,8 @@ export default function StudySection() {
                         router.push(`/explore?major=${selectedMajor}`);
                       }}
                     >
-                      <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden bg-blue-50/50">
-                        <div className="absolute inset-0 translate-y-6 scale-[1.15]">
+                      <div className="w-full h-28 sm:h-36 relative rounded-xl overflow-hidden bg-blue-50/50">
+                        <div className="absolute inset-0 translate-y-4 scale-[1.05]">
                           <Image
                             src="/images/popup-2.png"
                             alt="Eksplorasi & Temukan"
@@ -344,10 +344,10 @@ export default function StudySection() {
                         {/* White Fade Effect */}
                         <div className="absolute bottom-0 left-0 right-0 h-[15%] bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
                       </div>
-                      <div className="w-full bg-blue-500 text-white text-center py-2 md:py-2.5 rounded-lg font-bold text-sm md:text-base mb-3 group-hover:bg-blue-500 transition-colors">
+                      <div className="w-full bg-blue-500 text-white text-center py-2 md:py-2.5 rounded-lg font-bold text-sm md:text-base mb-2 group-hover:bg-blue-500 transition-colors">
                         Eksplorasi & Temukan
                       </div>
-                      <p className="text-[11px] md:text-xs text-neutral-600 text-center leading-relaxed px-1">
+                      <p className="text-[10px] md:text-xs text-neutral-600 text-center leading-relaxed px-1">
                         Saya masih bingung. Biarkan AI VocaTrack menganalisis potensiku seiring aku belajar.
                       </p>
                     </div>
@@ -355,9 +355,9 @@ export default function StudySection() {
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 h-full">
                     {/* Left Column: Static Option 1 Card */}
-                    <div className="relative flex flex-col items-center bg-white border border-blue-200 rounded-2xl p-4 md:p-5">
-                      <div className="w-full aspect-[4/3] relative rounded-xl overflow-hidden bg-blue-50/50">
-                        <div className="absolute inset-0 translate-y-6 scale-[1.25]">
+                    <div className="relative flex flex-col items-center bg-white border border-blue-200 rounded-2xl p-3 md:p-4">
+                      <div className="w-full h-28 md:h-36 relative rounded-xl overflow-hidden bg-blue-50/50">
+                        <div className="absolute inset-0 translate-y-4 scale-[1.15]">
                           <Image
                             src="/images/popup-1.png"
                             alt="Sudah Punya Target"
@@ -367,10 +367,10 @@ export default function StudySection() {
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 h-[15%] bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
                       </div>
-                      <div className="w-full bg-blue-500 text-white text-center py-2 md:py-2.5 rounded-lg font-bold text-sm md:text-base mb-3">
+                      <div className="w-full bg-blue-500 text-white text-center py-2 md:py-2.5 rounded-lg font-bold text-sm md:text-base mb-2">
                         Sudah Punya Target!
                       </div>
-                      <p className="text-[11px] md:text-xs text-neutral-600 text-center leading-relaxed px-1">
+                      <p className="text-[10px] md:text-xs text-neutral-600 text-center leading-relaxed px-1">
                         Saya sudah tahu ingin bekerja sebagai apa, bantu saya buatkan jalurnya.
                       </p>
                     </div>
