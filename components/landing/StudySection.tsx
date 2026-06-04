@@ -268,7 +268,7 @@ export default function StudySection() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar bg-white rounded-3xl shadow-2xl flex flex-col"
             >
               {/* Close Button */}
               <button
