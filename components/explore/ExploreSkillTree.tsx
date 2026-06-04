@@ -196,17 +196,17 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
             <div key={idx} className="flex flex-col items-center w-full relative overflow-hidden">
               <div className="flex w-full justify-center items-center gap-4 md:gap-8 relative pt-8 pb-4">
 
-                <div className="w-[160px] md:w-[240px] flex-shrink-0 flex justify-end relative z-20">
+                <div className="w-[160px] md:w-[240px] flex-shrink-0 flex justify-end">
                   {level.leftBranch && <LeftBranch skills={level.leftBranch} />}
                 </div>
 
-                <div className="flex-shrink-0 relative flex justify-center z-30">
+                <div className="flex-shrink-0 relative flex justify-center">
                   <SpineUp />
                   <CategoryNode label={level.category} />
                   {!isLast && <SpineDown />}
                 </div>
 
-                <div className="w-[160px] md:w-[240px] flex-shrink-0 flex justify-start relative z-20">
+                <div className="w-[160px] md:w-[240px] flex-shrink-0 flex justify-start">
                   {level.rightBranch && <RightBranch skills={level.rightBranch} />}
                 </div>
 
@@ -220,7 +220,7 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
 
               {/* Spine to Quiz */}
               <div className="relative flex justify-center w-full pb-8 pt-4">
-                <div className="absolute top-0 bottom-1/2 w-[3px] bg-blue-400 -z-10"></div>
+                <div className="absolute top-[-2000px] bottom-1/2 w-[3px] bg-blue-400 -z-10"></div>
                 <QuizNode categoryId={level.category} label={level.category} />
               </div>
 
