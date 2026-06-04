@@ -1,0 +1,62 @@
+import { 
+  Monitor, 
+  Globe, 
+  Palette, 
+  Calculator, 
+  Car, 
+  Zap, 
+  ChefHat, 
+  Building,
+  Cpu,
+  Scissors,
+  Home,
+  Film,
+  Camera,
+  Briefcase,
+  ShoppingBag,
+  Pill,
+  Wheat,
+  Trees,
+  Wrench,
+  Bike,
+  Ruler,
+  Map,
+  Book,
+  Smartphone,
+  Video
+} from "lucide-react";
+
+export const majors = [
+  // Page 1
+  { id: "tkj", title: "TKJ", desc: "Teknik Komputer Jaringan", icon: Globe },
+  { id: "dkv", title: "DKV", desc: "Desain Komunikasi Visual", icon: Palette },
+  { id: "tkr", title: "TKR", desc: "Teknik Kendaraan Ringan", icon: Car },
+  { id: "tei", title: "TEI", desc: "Teknik Elektronika Industri", icon: Cpu },
+  { id: "rpl", title: "RPL", desc: "Rekayasa Perangkat Lunak", icon: Monitor },
+  { id: "titl", title: "TITL", desc: "Teknik Instalasi Tenaga Listrik", icon: Zap },
+  { id: "tabus", title: "TABUS", desc: "Jurusan Tata Busana", icon: Scissors },
+  { id: "tabog", title: "TABOG", desc: "Jurusan Tata Boga", icon: ChefHat },
+  { id: "tgb", title: "TGB", desc: "Teknik Gambar Bangunan", icon: Home },
+  { id: "animasi", title: "ANIMASI", desc: "Jurusan Animasi", icon: Film },
+  { id: "akuntansi", title: "AKUNTANSI", desc: "Jurusan Akuntansi", icon: Calculator },
+  { id: "perhotelan", title: "PERHOTELAN", desc: "Jurusan Perhotelan", icon: Building },
+
+  // Page 2
+  { id: "mm", title: "MM", desc: "Multimedia", icon: Camera },
+  { id: "otkp", title: "OTKP", desc: "Otomatisasi dan Tata Kelola Perkantoran", icon: Briefcase },
+  { id: "bdp", title: "BDP", desc: "Bisnis Daring dan Pemasaran", icon: ShoppingBag },
+  { id: "farmasi", title: "FARMASI", desc: "Jurusan Farmasi", icon: Pill },
+  { id: "aphp", title: "APHP", desc: "Agribisnis Pengolahan Hasil Pertanian", icon: Wheat },
+  { id: "atph", title: "ATPH", desc: "Agribisnis Tanaman Pangan dan Hortikultura", icon: Trees },
+  { id: "tkro", title: "TKRO", desc: "Teknik Kendaraan Ringan Otomotif", icon: Wrench },
+  { id: "tsm", title: "TSM", desc: "Teknik Sepeda Motor", icon: Bike },
+  { id: "dpib", title: "DPIB", desc: "Desain Pemodelan dan Informasi Bangunan", icon: Ruler },
+  { id: "geologi", title: "GEOLOGI", desc: "Geologi Pertambangan", icon: Map },
+  { id: "agribisnis", title: "AGRIBISNIS", desc: "Agribisnis", icon: Wheat },
+  { id: "multimedia", title: "MULTIMEDIA", desc: "Multimedia", icon: Video },
+
+  // Page 3
+  { id: "sija", title: "SIJA", desc: "Sistem Informatika Jaringan dan Aplikasi", icon: Smartphone },
+  { id: "tp", title: "TP", desc: "Teknik Pemesinan", icon: Wrench },
+  { id: "logistik", title: "LOGISTIK", desc: "Teknik Logistik", icon: Book },
+];
