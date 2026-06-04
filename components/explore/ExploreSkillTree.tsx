@@ -111,10 +111,10 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
 
   // --- SPINE CONNECTORS ---
   const SpineUp = () => (
-    <div className="absolute bottom-1/2 left-1/2 w-[3px] h-[2000px] bg-blue-400 -translate-x-1/2 z-0"></div>
+    <div className="absolute bottom-1/2 left-1/2 w-[3px] h-[2000px] bg-blue-400 -translate-x-1/2 -z-10"></div>
   );
   const SpineDown = () => (
-    <div className="absolute top-1/2 left-1/2 w-[3px] h-[2000px] bg-blue-400 -translate-x-1/2 z-0"></div>
+    <div className="absolute top-1/2 left-1/2 w-[3px] h-[2000px] bg-blue-400 -translate-x-1/2 -z-10"></div>
   );
 
   // --- ORTHOGONAL BRANCH COMPONENTS ---
@@ -122,14 +122,14 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
   const LeftBranch = ({ skills }: { skills: ExploreSkill[] }) => {
     if (!skills || skills.length === 0) return null;
     return (
-      <div className="flex flex-col gap-5 relative w-full items-end pr-8">
-        <div className="absolute right-0 top-1/2 w-8 h-[3px] bg-blue-400 translate-x-full -translate-y-1/2 z-0"></div>
+      <div className="flex flex-col gap-5 relative w-full items-end pr-6 md:pr-8">
+        <div className="absolute right-0 top-1/2 w-6 md:w-8 h-[3px] bg-blue-400 translate-x-full -translate-y-1/2 -z-10"></div>
         {skills.length > 1 && (
-          <div className="absolute right-0 top-[28px] bottom-[28px] w-[3px] bg-blue-400 z-0 rounded-full"></div>
+          <div className="absolute right-0 top-[24px] md:top-[28px] bottom-[24px] md:bottom-[28px] w-[3px] bg-blue-400 -z-10 rounded-full"></div>
         )}
         {skills.map((skill, i) => (
           <div key={i} className="relative flex items-center justify-end w-full">
-            <div className="absolute right-[-2rem] top-1/2 w-8 h-[3px] bg-blue-400 -translate-y-1/2 z-0"></div>
+            <div className="absolute right-[-1.5rem] md:right-[-2rem] top-1/2 w-6 md:w-8 h-[3px] bg-blue-400 -translate-y-1/2 -z-10"></div>
             {renderNode(skill, 'l')}
           </div>
         ))}
@@ -140,14 +140,14 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
   const RightBranch = ({ skills }: { skills: ExploreSkill[] }) => {
     if (!skills || skills.length === 0) return null;
     return (
-      <div className="flex flex-col gap-5 relative w-full items-start pl-8">
-        <div className="absolute left-0 top-1/2 w-8 h-[3px] bg-blue-400 -translate-x-full -translate-y-1/2 z-0"></div>
+      <div className="flex flex-col gap-5 relative w-full items-start pl-6 md:pl-8">
+        <div className="absolute left-0 top-1/2 w-6 md:w-8 h-[3px] bg-blue-400 -translate-x-full -translate-y-1/2 -z-10"></div>
         {skills.length > 1 && (
-          <div className="absolute left-0 top-[28px] bottom-[28px] w-[3px] bg-blue-400 z-0 rounded-full"></div>
+          <div className="absolute left-0 top-[24px] md:top-[28px] bottom-[24px] md:bottom-[28px] w-[3px] bg-blue-400 -z-10 rounded-full"></div>
         )}
         {skills.map((skill, i) => (
           <div key={i} className="relative flex items-center justify-start w-full">
-            <div className="absolute left-[-2rem] top-1/2 w-8 h-[3px] bg-blue-400 -translate-y-1/2 z-0"></div>
+            <div className="absolute left-[-1.5rem] md:left-[-2rem] top-1/2 w-6 md:w-8 h-[3px] bg-blue-400 -translate-y-1/2 -z-10"></div>
             {renderNode(skill, 'r')}
           </div>
         ))}
@@ -160,7 +160,7 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
     return (
       <div className="flex flex-col gap-6 items-center w-full relative z-10">
         {/* Vertical Spine that connects up to CategoryNode and stops at the last node's center */}
-        <div className="absolute left-1/2 top-[-2000px] bottom-[28px] w-[3px] bg-blue-400 -translate-x-1/2 z-0"></div>
+        <div className="absolute left-1/2 top-[-2000px] bottom-[24px] md:bottom-[28px] w-[3px] bg-blue-400 -translate-x-1/2 -z-10"></div>
 
         {skills.map((skill, i) => (
           <div key={i} className="relative z-20 w-fit">
@@ -172,7 +172,7 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
   };
 
   const Trunk = () => (
-    <div className="w-[3px] h-12 bg-blue-400 z-0"></div>
+    <div className="w-[3px] h-12 bg-blue-400 -z-10"></div>
   );
 
   return (
@@ -194,19 +194,19 @@ export default function ExploreSkillTree({ roadmap, majorId, completedItems }: E
 
           return (
             <div key={idx} className="flex flex-col items-center w-full relative overflow-hidden">
-              <div className="flex w-full justify-center items-center gap-8 relative pt-8 pb-4">
+              <div className="flex w-full justify-center items-center gap-4 md:gap-8 relative pt-8 pb-4">
 
-                <div className="flex-1 flex justify-end">
+                <div className="w-[160px] md:w-[240px] flex-shrink-0 flex justify-end relative z-20">
                   {level.leftBranch && <LeftBranch skills={level.leftBranch} />}
                 </div>
 
-                <div className="flex-shrink-0 relative flex justify-center">
+                <div className="flex-shrink-0 relative flex justify-center z-30">
                   <SpineUp />
                   <CategoryNode label={level.category} />
                   {!isLast && <SpineDown />}
                 </div>
 
-                <div className="flex-1 flex justify-start">
+                <div className="w-[160px] md:w-[240px] flex-shrink-0 flex justify-start relative z-20">
                   {level.rightBranch && <RightBranch skills={level.rightBranch} />}
                 </div>
 
